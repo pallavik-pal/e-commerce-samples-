@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terra & Thread — Slow-made upcycled homeware</title>
+  <meta name="description" content="Quietly beautiful homeware and crafts, handmade in India from what was left behind." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M15 95V50a35 35 0 0 1 70 0v45z' fill='%23A56B4F'/></svg>" />
+</head>
+<body>
+
+  <div class="note">Complimentary shipping over ₹1,499 &nbsp;·&nbsp; Wrapped in reused cotton, never plastic</div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu"><i data-icon="menu"></i></button>
+      <nav class="nav" id="nav">
+        <a href="#shop">Shop</a>
+        <a href="#collections">Collections</a>
+        <a href="#makers">Our makers</a>
+        <a href="#materials">Materials</a>
+      </nav>
+      <a href="#top" class="logo">Terra <em>&amp;</em> Thread</a>
+      <div class="header__actions">
+        <button class="icon-btn" id="searchBtn" aria-label="Search"><i data-icon="search"></i></button>
+        <button class="icon-btn" id="wishBtn" aria-label="Wishlist"><i data-icon="heart"></i><span class="badge" id="wishCount">0</span></button>
+        <button class="icon-btn" id="cartBtn" aria-label="Cart"><i data-icon="bag"></i><span class="badge" id="cartCount">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__visual">
+          <div class="arch arch--lg" data-art="11"></div>
+          <div class="arch arch--sm" data-art="13"></div>
+          <span class="hero__caption"><em>Rope Mirror</em> — once a fishing line in Goa</span>
+        </div>
+        <div class="hero__copy">
+          <span class="eyebrow">Slow-made homeware · Est. 2019</span>
+          <h1>Beautifully made from <em>what was left behind.</em></h1>
+          <p>Each piece begins as something discarded — a sari offcut, a café bottle, a length of old rope — and is shaped by hand, slowly, by makers across India.</p>
+          <div class="hero__cta">
+            <a href="#shop" class="btn btn--primary">Explore the collection</a>
+            <a href="#makers" class="link">Meet the makers →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATERIALS -->
+    <section class="materials" id="materials">
+      <div class="container materials__grid">
+        <div data-reveal><span class="mat-icon" data-icon="bottle"></span><h3>Glass</h3><p>Café & bar bottles, hand-cut and flame polished.</p></div>
+        <div data-reveal><span class="mat-icon" data-icon="spool"></span><h3>Textile</h3><p>Sari silk, denim and mill-sack offcuts.</p></div>
+        <div data-reveal><span class="mat-icon" data-icon="log"></span><h3>Timber</h3><p>Shipping pallets and beach-found driftwood.</p></div>
+        <div data-reveal><span class="mat-icon" data-icon="can"></span><h3>Metal & rubber</h3><p>Biscuit tins, paint cans and retired tyres.</p></div>
+      </div>
+    </section>
+
+    <!-- COLLECTIONS -->
+    <section class="section" id="collections">
+      <div class="container">
+        <div class="head" data-reveal>
+          <span class="eyebrow">Collections</span>
+          <h2>Find your <em>corner</em></h2>
+        </div>
+        <div class="cats" id="cats"></div>
+      </div>
+    </section>
+
+    <!-- SHOP (sidebar layout) -->
+    <section class="section section--shop" id="shop">
+      <div class="container shop">
+        <aside class="shop__side">
+          <h2>The shop</h2>
+          <p class="result-count" id="resultCount"></p>
+          <label class="search"><i data-icon="search"></i><input type="search" id="searchInput" placeholder="Search" /></label>
+          <p class="side-label">Collection</p>
+          <div class="chips" id="chips" role="tablist"></div>
+          <p class="side-label">Sort by</p>
+          <select id="sortSelect" aria-label="Sort products">
+            <option value="featured">Featured</option><option value="low">Price, low to high</option><option value="high">Price, high to low</option><option value="rating">Most loved</option><option value="new">New arrivals</option>
+          </select>
+        </aside>
+        <div class="shop__main">
+          <div class="grid" id="grid"></div>
+          <div class="empty" id="empty" hidden><p><em>Nothing quite matches.</em></p><button class="btn btn--ghost" id="resetFilters">Clear filters</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAKER STORY -->
+    <section class="section maker" id="makers">
+      <div class="container maker__inner">
+        <div class="maker__img" data-reveal>
+          <div class="arch arch--story" data-art="2"></div>
+        </div>
+        <div class="maker__copy" data-reveal>
+          <span class="eyebrow">Meet the makers</span>
+          <blockquote>“Every sari carries a memory. We don't cut it away — we braid it into something that will hold new ones.”</blockquote>
+          <p class="maker__name">Sunita Devi <span>· Dhaaga Women's Co-operative, Varanasi</span></p>
+          <p>Sunita leads a group of 18 women who turn sari offcuts from local tailors into rugs, totes and cushions. Every purchase pays a fair, fixed wage — agreed before the work begins.</p>
+          <button class="btn btn--ghost" data-jump-cat="textiles">Shop the textiles</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section class="section" id="impact">
+      <div class="container impact">
+        <div><b data-count="12400">0</b><span>kilograms kept from landfill</span></div>
+        <div><b data-count="38500">0</b><span>bottles given a second life</span></div>
+        <div><b data-count="42">0</b><span>makers, fairly paid</span></div>
+        <div><b data-count="9800">0</b><span>trees planted with orders</span></div>
+      </div>
+    </section>
+
+    <!-- KITS -->
+    <section class="section">
+      <div class="container kits" data-reveal>
+        <div class="kits__art"><div class="arch" data-art="14"></div></div>
+        <div>
+          <span class="eyebrow">For slow afternoons</span>
+          <h2>Make something <em>by hand</em></h2>
+          <p>Our craft kits bring the workshop home — rescued materials, simple tools and a gentle, illustrated guide.</p>
+          <button class="btn btn--primary" data-jump-cat="kits">Discover the kits</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="section newsletter">
+      <div class="container" data-reveal>
+        <span class="eyebrow">Letters from the workshop</span>
+        <h2>Stories, new pieces &amp; <em>10% off</em> your first order</h2>
+        <form id="newsForm" class="newsletter__form">
+          <input type="email" required placeholder="Your email address" aria-label="Email address" />
+          <button class="btn btn--primary" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="#top" class="logo">Terra <em>&amp;</em> Thread</a>
+        <p>Slow-made upcycled homeware, handcrafted across India.</p>
+      </div>
+      <div><h4>Shop</h4><a href="#shop">All pieces</a><a href="#collections">Collections</a><a href="#shop">Gift cards</a></div>
+      <div><h4>Care</h4><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Care guides</a></div>
+      <div><h4>Studio</h4><a href="#makers">Our makers</a><a href="#">Journal</a><a href="mailto:hello@terrathread.example">Contact</a></div>
+    </div>
+    <p class="container footer__base">© <span id="year"></span> Terra &amp; Thread</p>
+  </footer>
+
+  <!-- Shared shop UI -->
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="drawer" id="cartDrawer" aria-label="Shopping bag" aria-hidden="true">
+    <div class="drawer__head"><h3>Your bag</h3><button class="icon-btn" data-close aria-label="Close"><i data-icon="close"></i></button></div>
+    <div class="ship-progress" id="shipProgress"></div>
+    <div class="drawer__body" id="cartItems"></div>
+    <div class="drawer__foot" id="cartFoot"></div>
+  </aside>
+  <aside class="drawer" id="wishDrawer" aria-label="Wishlist" aria-hidden="true">
+    <div class="drawer__head"><h3>Saved pieces</h3><button class="icon-btn" data-close aria-label="Close"><i data-icon="close"></i></button></div>
+    <div class="drawer__body" id="wishItems"></div>
+  </aside>
+  <div class="modal" id="quickView" role="dialog" aria-modal="true" aria-hidden="true"><div class="modal__card modal__card--wide" id="quickViewBody"></div></div>
+  <div class="modal" id="checkout" role="dialog" aria-modal="true" aria-hidden="true"><div class="modal__card" id="checkoutBody"></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <script src="icons.js"></script>
+  <script src="products.js"></script>
+  <script>
+    /* Terra palette: muted clay, sage, sand & dusk tones */
+    (() => {
+      const bgs = ["#E9DFD2", "#DCE0D0", "#EBDCD3", "#DFDAE2", "#E6E0CE", "#D6E0DC"];
+      const c1  = ["#A56B4F", "#6F7D5C", "#B98A5E", "#7A6F8A", "#5E7C78", "#9B5F4E"];
+      const c2  = ["#E1C3A5", "#BCC6A3", "#E6BFA9", "#CBBFD9", "#EAD7A8", "#B9D0CB"];
+      PRODUCTS.forEach((p, i) => { p.bg = bgs[i % 6]; p.c1 = c1[(i + 1) % 6]; p.c2 = c2[(i + 3) % 6]; });
+      CATEGORIES.forEach((c, i) => { c.bg = bgs[(i + 2) % 6]; });
+    })();
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReNest — Upcycled Home Decor & Crafts</title>
+  <meta name="description" content="Handmade home decor and crafts made from rescued materials. Old things, new stories." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%232F5D50'/><path d='M30 62c0-18 14-30 36-32-2 22-14 36-32 36' fill='%23E8B04B'/></svg>" />
+</head>
+<body>
+
+  <!-- Announcement marquee -->
+  <div class="announce" aria-label="Announcements">
+    <div class="announce__track">
+      <span>♻ Free plastic-free shipping over ₹1,499</span>
+      <span>✿ Every order plants a tree</span>
+      <span>✂ New: DIY craft kits are here</span>
+      <span>☺ Use code <b>RENEST10</b> for 10% off your first order</span>
+      <span>♻ Free plastic-free shipping over ₹1,499</span>
+      <span>✿ Every order plants a tree</span>
+      <span>✂ New: DIY craft kits are here</span>
+      <span>☺ Use code <b>RENEST10</b> for 10% off your first order</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu"><i data-icon="menu"></i>
+      </button>
+      <a href="#top" class="logo" aria-label="ReNest home">
+        <svg viewBox="0 0 48 48" class="logo__mark" aria-hidden="true">
+          <circle cx="24" cy="24" r="22" fill="#2F5D50"/>
+          <path d="M14 31c0-10 8-17 21-18-1 13-9 20-19 20" fill="#E8B04B"/>
+          <path d="M16 33c5-6 10-10 16-14" stroke="#2F5D50" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span>Re<em>Nest</em></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#shop">Shop</a>
+        <a href="#categories">Collections</a>
+        <a href="#process">How it's made</a>
+        <a href="#impact">Impact</a>
+        <a href="#kits">DIY Kits</a>
+      </nav>
+      <div class="header__actions">
+        <button class="icon-btn" id="searchBtn" aria-label="Search"><i data-icon="search"></i>
+        </button>
+        <button class="icon-btn" id="wishBtn" aria-label="Wishlist"><i data-icon="heart"></i>
+          <span class="badge" id="wishCount">0</span>
+        </button>
+        <button class="icon-btn cart-btn" id="cartBtn" aria-label="Cart"><i data-icon="bag"></i>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <span class="scribble">handmade · upcycled · one of a kind</span>
+          <h1>Old things,<br /><span class="hl">new stories.</span></h1>
+          <p>Home decor and crafts lovingly made from rescued bottles, fabric scraps, tins and timber — by independent artisans who believe nothing is ever really waste.</p>
+          <div class="hero__cta">
+            <a href="#shop" class="btn btn--primary">Shop the collection
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#process" class="btn btn--ghost">See how it's made</a>
+          </div>
+          <div class="hero__stats">
+            <div><b>12,400+</b><span>kg waste rescued</span></div>
+            <div><b>40+</b><span>artisan makers</span></div>
+            <div><b>4.9★</b><span>from 3k reviews</span></div>
+          </div>
+        </div>
+        <div class="hero__art">
+          <div class="blob"></div>
+          <div class="tile tile--a" id="heroA"></div>
+          <div class="tile tile--b" id="heroB"></div>
+          <div class="tile tile--c" id="heroC"></div>
+          <div class="stamp" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <defs><path id="circ" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs>
+              <text><textPath href="#circ">100% RESCUED MATERIALS • MADE BY HAND • </textPath></text>
+            </svg>
+            <span data-icon="recycle"></span>
+          </div>
+        </div>
+      </div>
+      <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30c120 25 240 25 360 0s240-25 360 0 240 25 360 0 240-25 360 0v30H0z"/></svg>
+    </section>
+
+    <!-- Trust strip -->
+    <section class="trust">
+      <div class="container trust__grid">
+        <div><i data-icon="truck"></i><span><b>Free shipping</b> over ₹1,499</span></div>
+        <div><i data-icon="box"></i><span><b>Plastic-free</b> packaging</span></div>
+        <div><i data-icon="hand"></i><span><b>Fair pay</b> for every maker</span></div>
+        <div><i data-icon="returns"></i><span><b>7-day</b> easy returns</span></div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section" id="categories">
+      <div class="container">
+        <div class="section__head">
+          <span class="scribble">browse by mood</span>
+          <h2>Shop by collection</h2>
+        </div>
+        <div class="cats" id="cats"></div>
+      </div>
+    </section>
+
+    <!-- Shop -->
+    <section class="section section--shop" id="shop">
+      <div class="container">
+        <div class="section__head section__head--row">
+          <div>
+            <span class="scribble">fresh from the workshop</span>
+            <h2>All treasures</h2>
+          </div>
+          <p class="result-count" id="resultCount"></p>
+        </div>
+
+        <div class="toolbar">
+          <div class="chips" id="chips" role="tablist"></div>
+          <div class="toolbar__right">
+            <label class="search"><i data-icon="search"></i>
+              <input type="search" id="searchInput" placeholder="Search vases, baskets, kits…" />
+            </label>
+            <select id="sortSelect" aria-label="Sort products">
+              <option value="featured">Featured</option>
+              <option value="low">Price: low to high</option>
+              <option value="high">Price: high to low</option>
+              <option value="rating">Top rated</option>
+              <option value="new">Newest</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid" id="grid"></div>
+        <div class="empty" id="empty" hidden>
+          <p><i data-icon="search"></i> Nothing matched that search.</p>
+          <button class="btn btn--ghost" id="resetFilters">Clear filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section section--process" id="process">
+      <div class="container">
+        <div class="section__head">
+          <span class="scribble">from trash to treasure</span>
+          <h2>How every piece is made</h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <div class="step__icon" data-icon="collect"></div>
+            <h3>We rescue</h3>
+            <p>Bottles, textile offcuts, tins and old timber are collected from local kabadiwalas, tailors and cafés.</p>
+          </li>
+          <li>
+            <div class="step__icon" data-icon="clean"></div>
+            <h3>They clean & craft</h3>
+            <p>Our artisan partners sort, clean and transform each material by hand — no two pieces turn out the same.</p>
+          </li>
+          <li>
+            <div class="step__icon" data-icon="home"></div>
+            <h3>You give it a home</h3>
+            <p>Your piece arrives in plastic-free packaging with a tag telling you exactly what it used to be.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Impact -->
+    <section class="impact" id="impact">
+      <div class="container">
+        <h2>Our impact, so far</h2>
+        <div class="impact__grid">
+          <div><b data-count="12400">0</b><span>kg of waste rescued</span></div>
+          <div><b data-count="38500">0</b><span>glass bottles reborn</span></div>
+          <div><b data-count="42">0</b><span>artisans paid fairly</span></div>
+          <div><b data-count="9800">0</b><span>trees planted</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIY kits banner -->
+    <section class="section" id="kits">
+      <div class="container kits">
+        <div class="kits__copy">
+          <span class="scribble">weekend project?</span>
+          <h2>Make your own with our DIY craft kits</h2>
+          <p>Everything you need — pre-cut rescued materials, tools and a step-by-step guide — to make something beautiful at home. Perfect for gifting and rainy afternoons.</p>
+          <button class="btn btn--primary" data-jump-cat="kits">Explore kits</button>
+        </div>
+        <div class="kits__art" id="kitsArt"></div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section section--reviews">
+      <div class="container">
+        <div class="section__head">
+          <span class="scribble">kind words</span>
+          <h2>Loved in 3,000+ homes</h2>
+        </div>
+        <div class="reviews">
+          <figure>
+            <div class="stars">★★★★★</div>
+            <blockquote>The bottle vases are even prettier in person. Love that the tag tells you which café the glass came from!</blockquote>
+            <figcaption><span class="avatar" style="background:#D96C4A">A</span>Ananya · Bengaluru</figcaption>
+          </figure>
+          <figure>
+            <div class="stars">★★★★★</div>
+            <blockquote>Did the macramé kit with my daughter over a weekend. Clear instructions and zero plastic in the box.</blockquote>
+            <figcaption><span class="avatar" style="background:#2F5D50">R</span>Rahul · Pune</figcaption>
+          </figure>
+          <figure>
+            <div class="stars">★★★★☆</div>
+            <blockquote>The rag rug is so cosy and colourful. Shipping took a couple of days longer but worth the wait.</blockquote>
+            <figcaption><span class="avatar" style="background:#E8B04B">M</span>Meera · Kochi</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section">
+      <div class="container newsletter">
+        <div>
+          <h2>Join the ReNest circle</h2>
+          <p>New drops, maker stories and a little <b>10% welcome gift</b>. No spam — we hate waste.</p>
+        </div>
+        <form id="newsForm" class="newsletter__form">
+          <input type="email" required placeholder="you@example.com" aria-label="Email address" />
+          <button class="btn btn--accent" type="submit">Get 10% off</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a href="#top" class="logo logo--light"><span>Re<em>Nest</em></span></a>
+        <p>Upcycled home decor & crafts, handmade in India from rescued materials.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="#shop">All products</a><a href="#categories">Collections</a><a href="#kits">DIY Kits</a><a href="#shop">Gift cards</a>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <a href="#">Shipping</a><a href="#">Returns</a><a href="#">Track order</a><a href="#">FAQ</a>
+      </div>
+      <div>
+        <h4>Say hello</h4>
+        <a href="mailto:hello@renest.example">hello@renest.example</a><a href="#">Instagram</a><a href="#">Pinterest</a><a href="#">Become a maker</a>
+      </div>
+    </div>
+    <div class="container footer__base">
+      <span>© <span id="year"></span> ReNest. Made with rescued love.</span>
+      <span>UPI · Cards · Net banking · COD</span>
+    </div>
+  </footer>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay" hidden></div>
+
+  <!-- Cart drawer -->
+  <aside class="drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer__head">
+      <h3>Your basket</h3>
+      <button class="icon-btn" data-close aria-label="Close cart"><i data-icon="close"></i></button>
+    </div>
+    <div class="ship-progress" id="shipProgress"></div>
+    <div class="drawer__body" id="cartItems"></div>
+    <div class="drawer__foot" id="cartFoot"></div>
+  </aside>
+
+  <!-- Wishlist drawer -->
+  <aside class="drawer" id="wishDrawer" aria-label="Wishlist" aria-hidden="true">
+    <div class="drawer__head">
+      <h3>Saved for later ♥</h3>
+      <button class="icon-btn" data-close aria-label="Close wishlist"><i data-icon="close"></i></button>
+    </div>
+    <div class="drawer__body" id="wishItems"></div>
+  </aside>
+
+  <!-- Quick view modal -->
+  <div class="modal" id="quickView" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal__card modal__card--wide" id="quickViewBody"></div>
+  </div>
+
+  <!-- Checkout modal -->
+  <div class="modal" id="checkout" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal__card" id="checkoutBody"></div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <script src="icons.js"></script>
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

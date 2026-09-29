@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-commerce Samples</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Archivo+Black&family=Cormorant+Garamond:ital,wght@1,500&family=Shrikhand&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg: #F5F1EA; --ink: #22201D; --muted: #6D665E; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", system-ui, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.55; }
+    .wrap { width: min(1180px, 100% - 32px); margin: 0 auto; padding: 4rem 0 5rem; }
+    header { margin-bottom: 3rem; max-width: 46rem; }
+    header small { letter-spacing: .2em; text-transform: uppercase; color: var(--muted); font-size: .75rem; font-weight: 700; }
+    h1 { font-family: "Fraunces", serif; font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.05; margin: .6rem 0 1rem; }
+    header p { color: var(--muted); font-size: 1.1rem; }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.8rem; }
+    a.card { display: flex; flex-direction: column; text-decoration: none; color: inherit; border-radius: 20px; overflow: hidden; background: #fff; box-shadow: 0 1px 0 rgba(0,0,0,.06), 0 18px 40px -24px rgba(0,0,0,.35); transition: transform .35s cubic-bezier(.2,.8,.2,1.2), box-shadow .35s; }
+    a.card:hover { transform: translateY(-6px); box-shadow: 0 1px 0 rgba(0,0,0,.06), 0 28px 50px -24px rgba(0,0,0,.45); }
+    .preview { height: 230px; position: relative; overflow: hidden; display: grid; place-items: center; padding: 1.5rem; text-align: center; }
+    .preview .name { font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1; }
+    .preview .swatches { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; }
+    .preview .swatches i { width: 22px; height: 22px; border-radius: 50%; border: 2px solid rgba(0,0,0,.15); }
+    .info { padding: 1.4rem 1.6rem 1.6rem; display: grid; gap: .5rem; flex: 1; }
+    .info h2 { font-size: 1.25rem; display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
+    .info h2 span { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; background: var(--bg); padding: .25rem .6rem; border-radius: 99px; color: var(--muted); white-space: nowrap; }
+    .info p { color: var(--muted); }
+    .chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .4rem; }
+    .chips em { font-style: normal; font-size: .78rem; border: 1px solid #E2DBD0; padding: .2rem .6rem; border-radius: 99px; }
+    .open { margin-top: .6rem; font-weight: 700; }
+    /* per-sample previews */
+    .s1 { background: #F7F1E5; } .s1 .name { font-family: "Fraunces", serif; font-weight: 800; color: #2F5D50; }
+    .s1 .name em { color: #D96C4A; }
+    .s2 { background: #C6F432; } .s2 .name { font-family: "Archivo Black", sans-serif; background: #111; color: #FFF8E7; padding: .2rem .8rem; transform: rotate(-3deg); box-shadow: 6px 6px 0 #FF3D8B; }
+    .s3 { background: #E9DFD2; } .s3 .name { font-family: "Cormorant Garamond", serif; font-style: italic; color: #3B2F2A; font-weight: 500; font-size: clamp(2.3rem, 4.5vw, 3.2rem); }
+    .s4 { background: #FDFBF6 linear-gradient(rgba(120,160,200,.18) 1px, transparent 1px) 0 0 / 22px 22px; } .s4 .name { font-family: "Shrikhand", serif; color: #2E3A59; background: #FFE3A3; padding: .4rem 1rem; transform: rotate(2deg); box-shadow: 0 10px 20px -10px rgba(46,58,89,.5); }
+    footer { margin-top: 3rem; color: var(--muted); font-size: .9rem; }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } .wrap { padding-top: 2.5rem; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <small>Upcycled home décor & crafts · e-commerce concepts</small>
+      <h1>Four e-commerce samples</h1>
+      <p>Same catalogue, same easy shopping flow (browse → quick view → basket → 3-step checkout). Each sample explores a different personality for the brand. Click any card to try the full working demo.</p>
+    </header>
+
+    <div class="grid">
+      <a class="card" href="1-renest/">
+        <div class="preview s1"><div class="name">Re<em>Nest</em></div><div class="swatches"><i style="background:#2F5D50"></i><i style="background:#D96C4A"></i><i style="background:#E8B04B"></i><i style="background:#7FB7BE"></i></div></div>
+        <div class="info">
+          <h2>1 · ReNest <span>Warm & playful</span></h2>
+          <p>Kraft-paper textures, chunky outlined cards and a friendly hand-lettered voice. Approachable and cheerful — great for a broad, gift-buying audience.</p>
+          <div class="chips"><em>Floating hero tiles</em><em>Impact counters</em><em>How-it's-made steps</em></div>
+          <span class="open">Open sample →</span>
+        </div>
+      </a>
+      <a class="card" href="2-kabaad/">
+        <div class="preview s2"><div class="name">KABAAD.CO</div><div class="swatches"><i style="background:#111"></i><i style="background:#FF3D8B"></i><i style="background:#5B7CFF"></i><i style="background:#FFE14D"></i></div></div>
+        <div class="info">
+          <h2>2 · Kabaad Co. <span>Bold & loud</span></h2>
+          <p>Neo-brutalist pop: thick black outlines, hard shadows, huge type and bright colours. Built to stand out on Instagram and appeal to a young, design-savvy crowd.</p>
+          <div class="chips"><em>Was → Now stories</em><em>Numbered category list</em><em>Tilted marquee</em></div>
+          <span class="open">Open sample →</span>
+        </div>
+      </a>
+      <a class="card" href="3-terra/">
+        <div class="preview s3"><div class="name">Terra &amp; Thread</div><div class="swatches"><i style="background:#3B2F2A"></i><i style="background:#A56B4F"></i><i style="background:#6F7D5C"></i><i style="background:#E9DFD2"></i></div></div>
+        <div class="info">
+          <h2>3 · Terra &amp; Thread <span>Calm & premium</span></h2>
+          <p>Editorial and minimal: linen tones, elegant serif type, arch-shaped frames and lots of breathing room. Positions the brand as a boutique for higher price points.</p>
+          <div class="chips"><em>Sidebar shop filters</em><em>Maker story</em><em>Materials strip</em></div>
+          <span class="open">Open sample →</span>
+        </div>
+      </a>
+      <a class="card" href="4-scrap/">
+        <div class="preview s4"><div class="name">Scrap &amp; Story</div><div class="swatches"><i style="background:#2E3A59"></i><i style="background:#FF7F6E"></i><i style="background:#06A77D"></i><i style="background:#FFD166"></i></div></div>
+        <div class="info">
+          <h2>4 · Scrap &amp; Story <span>Handmade scrapbook</span></h2>
+          <p>Grid-paper backgrounds, taped polaroids, sticky notes and handwriting. Interactive and community-focused — ideal if the brand also runs workshops or sells DIY kits.</p>
+          <div class="chips"><em>“Guess the past” game</em><em>Workshop tickets</em><em>Polaroid products</em></div>
+          <span class="open">Open sample →</span>
+        </div>
+      </a>
+    </div>
+
+    <footer>All four samples are fully clickable demos. Product illustrations are placeholders for the client's real photography.</footer>
+  </div>
+</body>
+</html>

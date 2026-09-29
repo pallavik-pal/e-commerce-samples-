@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scrap & Story — Upcycled décor with a past life</title>
+  <meta name="description" content="Handmade home décor and craft kits, each made from something with a past life." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Nunito:wght@400;600;800&family=Kalam:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='14' y='10' width='72' height='82' rx='4' fill='white' stroke='%232E3A59' stroke-width='6'/><rect x='24' y='20' width='52' height='46' fill='%23FF7F6E'/><rect x='34' y='2' width='32' height='14' fill='%23FFD166' opacity='.9'/></svg>" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu"><i data-icon="menu"></i></button>
+      <a href="#top" class="logo">Scrap <span>&amp;</span> Story</a>
+      <nav class="nav" id="nav">
+        <a href="#shop">Shop</a>
+        <a href="#guess">Guess the past</a>
+        <a href="#club">Craft club</a>
+        <a href="#impact">Our impact</a>
+      </nav>
+      <div class="header__actions">
+        <button class="icon-btn" id="searchBtn" aria-label="Search"><i data-icon="search"></i></button>
+        <button class="icon-btn" id="wishBtn" aria-label="Wishlist"><i data-icon="heart"></i><span class="badge" id="wishCount">0</span></button>
+        <button class="icon-btn" id="cartBtn" aria-label="Cart"><i data-icon="bag"></i><span class="badge" id="cartCount">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <span class="hand hand--note">psst… everything here was something else first ✎</span>
+          <h1>Every piece has a <span class="circled">past life.
+            <svg viewBox="0 0 300 90" preserveAspectRatio="none" aria-hidden="true"><path d="M20 50C30 15 150 5 250 15s50 55-40 65S0 85 25 40"/></svg></span>
+          </h1>
+          <p>Cosy home décor, gifts and DIY craft kits — stitched, woven and glued together from rescued bottles, saris, tins and newspapers by small-town makers.</p>
+          <div class="hero__cta">
+            <a href="#shop" class="btn btn--primary">Start browsing</a>
+            <a href="#guess" class="btn btn--ghost">Play “guess the past” <i data-icon="dice"></i></a>
+          </div>
+        </div>
+        <div class="board">
+          <figure class="polaroid p1"><div class="polaroid__img" data-art="8" data-art-bg></div><figcaption>fruit bowl</figcaption></figure>
+          <figure class="polaroid p2"><div class="polaroid__img" data-art="3" data-art-bg></div><figcaption>pendant lamp</figcaption></figure>
+          <figure class="polaroid p3"><div class="polaroid__img" data-art="12" data-art-bg></div><figcaption>market tote</figcaption></figure>
+          <span class="annot a1">was 40 newspapers!<svg viewBox="0 0 60 40"><path d="M5 5c20 5 35 15 45 30m0 0-12-3m12 3 1-12"/></svg></span>
+          <span class="annot a2">↑ a biscuit tin</span>
+          <span class="annot a3">flour sacks ♥</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- STICKY NOTE CATEGORIES -->
+    <section class="section section--notes torn" id="categories">
+      <div class="container">
+        <div class="head" data-reveal><span class="hand">what are you looking for?</span><h2>Pick a sticky note</h2></div>
+        <div class="cats" id="cats"></div>
+      </div>
+    </section>
+
+    <!-- GUESS GAME -->
+    <section class="section" id="guess">
+      <div class="container">
+        <div class="head" data-reveal>
+          <span class="hand">a tiny game</span>
+          <h2>What was it before?</h2>
+          <p>Pick an answer to flip the card. <b id="score">Score: 0 / 4</b></p>
+        </div>
+        <div class="guess" id="guessGrid"></div>
+      </div>
+    </section>
+
+    <!-- SHOP -->
+    <section class="section section--shop" id="shop">
+      <div class="container">
+        <div class="shop-head">
+          <div><span class="hand">fresh off the craft table</span><h2>The whole scrapbook</h2></div>
+          <p class="result-count" id="resultCount"></p>
+        </div>
+        <div class="toolbar">
+          <div class="chips" id="chips" role="tablist"></div>
+          <div class="toolbar__right">
+            <label class="search"><i data-icon="search"></i><input type="search" id="searchInput" placeholder="Find a treasure…" /></label>
+            <select id="sortSelect" aria-label="Sort products">
+              <option value="featured">Our favourites</option><option value="low">Cheapest first</option><option value="high">Fanciest first</option><option value="rating">Most loved</option><option value="new">Newest</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid" id="grid"></div>
+        <div class="empty" id="empty" hidden><p class="hand">hmm, nothing in the scrapbook for that…</p><button class="btn btn--ghost" id="resetFilters">Clear filters</button></div>
+      </div>
+    </section>
+
+    <!-- CRAFT CLUB -->
+    <section class="section section--club torn" id="club">
+      <div class="container">
+        <div class="head" data-reveal><span class="hand">come make things with us</span><h2>Craft Club workshops</h2><p>Small, friendly, 2-hour sessions. All materials are rescued — tea & biscuits included.</p></div>
+        <div class="tickets">
+          <article class="ticket" data-reveal>
+            <div class="ticket__date"><b>17</b><span>OCT</span><small>SAT</small></div>
+            <div class="ticket__body"><h3>Bottle-cutting 101</h3><p>Turn wine bottles into tumblers & planters.</p><span class="muted">Bengaluru studio · 4–6 pm · ₹899</span></div>
+            <button class="btn btn--primary seat">Save a seat</button>
+          </article>
+          <article class="ticket" data-reveal>
+            <div class="ticket__date" style="--c:#06A77D"><b>25</b><span>OCT</span><small>SUN</small></div>
+            <div class="ticket__body"><h3>Macramé & chai</h3><p>Knot your own plant hanger from recycled cord.</p><span class="muted">Pune café pop-up · 11 am–1 pm · ₹699</span></div>
+            <button class="btn btn--primary seat">Save a seat</button>
+          </article>
+          <article class="ticket" data-reveal>
+            <div class="ticket__date" style="--c:#7B61FF"><b>08</b><span>NOV</span><small>SAT</small></div>
+            <div class="ticket__body"><h3>Kids' newspaper weaving</h3><p>Bowls & baskets for little hands (ages 6+).</p><span class="muted">Online · 3–4:30 pm · ₹399</span></div>
+            <button class="btn btn--primary seat">Save a seat</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section class="section" id="impact">
+      <div class="container">
+        <div class="head" data-reveal><span class="hand">counting on our fingers</span><h2>The good stuff, so far</h2></div>
+        <div class="tally">
+          <div class="note-card" style="--c:#FFE3A3; --r:-3deg"><i data-icon="recycle"></i><b data-count="12400">0</b><span>kg rescued from landfill</span></div>
+          <div class="note-card" style="--c:#C8E6F5; --r:2deg"><i data-icon="bottle"></i><b data-count="38500">0</b><span>bottles with a new job</span></div>
+          <div class="note-card" style="--c:#FFC9C1; --r:-1deg"><i data-icon="hand"></i><b data-count="42">0</b><span>makers paid fairly</span></div>
+          <div class="note-card" style="--c:#CDEBC5; --r:3deg"><i data-icon="tree"></i><b data-count="9800">0</b><span>trees planted</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="section">
+      <div class="container">
+        <div class="letter" data-reveal>
+          <span class="stamp-mini">10%<br/>OFF</span>
+          <p class="hand">Dear friend,</p>
+          <h2>Can we write to you sometimes?</h2>
+          <p>Maker stories, workshop dates and first dibs on one-of-a-kind pieces. Plus 10% off your first order. — S&amp;S</p>
+          <form id="newsForm" class="letter__form">
+            <input type="email" required placeholder="your email here" aria-label="Email address" />
+            <button class="btn btn--accent" type="submit">Send it <i data-icon="mail"></i></button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer torn">
+    <div class="container footer__grid">
+      <div><a href="#top" class="logo">Scrap <span>&amp;</span> Story</a><p>Home décor with a past life, handmade in India.</p></div>
+      <div><h4>Shop</h4><a href="#shop">Everything</a><a href="#categories">Categories</a><a href="#club">Workshops</a></div>
+      <div><h4>Help</h4><a href="#">Shipping</a><a href="#">Returns</a><a href="#">FAQ</a></div>
+      <div><h4>Say hi</h4><a href="mailto:hello@scrapstory.example">hello@scrapstory.example</a><a href="#">Instagram</a></div>
+    </div>
+    <p class="container footer__base">© <span id="year"></span> Scrap &amp; Story · glued together with love</p>
+  </footer>
+
+  <!-- Shared shop UI -->
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="drawer" id="cartDrawer" aria-label="Shopping bag" aria-hidden="true">
+    <div class="drawer__head"><h3>Your paper bag</h3><button class="icon-btn" data-close aria-label="Close"><i data-icon="close"></i></button></div>
+    <div class="ship-progress" id="shipProgress"></div>
+    <div class="drawer__body" id="cartItems"></div>
+    <div class="drawer__foot" id="cartFoot"></div>
+  </aside>
+  <aside class="drawer" id="wishDrawer" aria-label="Wishlist" aria-hidden="true">
+    <div class="drawer__head"><h3>Pinned for later <i data-icon="pin"></i></h3><button class="icon-btn" data-close aria-label="Close"><i data-icon="close"></i></button></div>
+    <div class="drawer__body" id="wishItems"></div>
+  </aside>
+  <div class="modal" id="quickView" role="dialog" aria-modal="true" aria-hidden="true"><div class="modal__card modal__card--wide" id="quickViewBody"></div></div>
+  <div class="modal" id="checkout" role="dialog" aria-modal="true" aria-hidden="true"><div class="modal__card" id="checkoutBody"></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <script src="icons.js"></script>
+  <script src="products.js"></script>
+  <script>
+    /* Scrapbook palette: pastel paper backgrounds, crayon-bright details */
+    (() => {
+      const paper = ["#FFE3A3", "#FFC9C1", "#C8E6F5", "#CDEBC5", "#E6D4F7", "#FFD8B0"];
+      const bold  = ["#FF7F6E", "#06A77D", "#2E3A59", "#F4A300", "#7B61FF", "#E94F83"];
+      const soft  = ["#FFD166", "#9ED8F0", "#FF9F8F", "#B5E48C", "#FFFFFF"];
+      PRODUCTS.forEach((p, i) => { p.bg = paper[i % 6]; p.c1 = bold[(i + 2) % 6]; p.c2 = soft[i % 5]; });
+      CATEGORIES.forEach((c, i) => { c.bg = paper[(i + 1) % 6]; });
+    })();
+  </script>
+  <script src="app.js"></script>
+  <script>
+    /* "What was it before?" mini-game + workshop seat buttons */
+    (() => {
+      const toast = (msg) => {
+        const t = document.getElementById("toast");
+        t.textContent = msg; t.classList.add("show");
+        clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("show"), 2400);
+      };
+      const rounds = [
+        { id: 8,  answer: "40 old newspapers",  wrong: ["A coconut shell", "Banana leaves"] },
+        { id: 10, answer: "A shipping pallet",  wrong: ["A cricket bat", "An old door"] },
+        { id: 3,  answer: "A biscuit tin",      wrong: ["A pressure cooker", "A paint bucket"] },
+        { id: 9,  answer: "A bicycle tyre",     wrong: ["Old flip-flops", "A yoga mat"] },
+      ];
+      let score = 0, played = 0;
+      const grid = document.getElementById("guessGrid");
+      const shuffle = (a) => a.map((v) => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map((x) => x[1]);
+      grid.innerHTML = rounds.map((r, i) => {
+        const p = PRODUCTS.find((x) => x.id === r.id);
+        return `
+          <div class="flip" data-round="${i}" data-reveal>
+            <div class="flip__inner">
+              <div class="flip__face flip__front">
+                <div class="flip__art" style="background-color:${p.bg}">${productThumb(p.id)}</div>
+                <h3>${p.name}</h3>
+                <div class="flip__opts">${shuffle([r.answer, ...r.wrong]).map((o) => `<button data-guess="${o}">${o}</button>`).join("")}</div>
+              </div>
+              <div class="flip__face flip__back">
+                <span class="flip__verdict"></span>
+                <p>It used to be…</p>
+                <b class="flip__answer">${r.answer}</b>
+                <p class="muted">Now it's a ${p.name.toLowerCase()} for ${STORE.currency}${p.price.toLocaleString("en-IN")}</p>
+                <button class="add" data-add="${p.id}">+ Add to bag</button>
+              </div>
+            </div>
+          </div>`;
+      }).join("");
+      // reveal observer in app.js already ran, so show these immediately
+      grid.querySelectorAll("[data-reveal]").forEach((el) => el.classList.add("reveal", "in"));
+
+      grid.addEventListener("click", (e) => {
+        const btn = e.target.closest("[data-guess]");
+        if (!btn) return;
+        const card = btn.closest(".flip");
+        if (card.classList.contains("flipped")) return;
+        const r = rounds[+card.dataset.round];
+        const right = btn.dataset.guess === r.answer;
+        if (right) score++;
+        played++;
+        card.querySelector(".flip__verdict").textContent = right ? "🎉 Spot on!" : "😅 Not quite!";
+        card.classList.add("flipped", right ? "right" : "wrong");
+        document.getElementById("score").textContent = `Score: ${score} / ${rounds.length}`;
+        if (played === rounds.length) {
+          setTimeout(() => toast(score >= 3 ? `You got ${score}/4 — certified upcycler! Use code RENEST10 🎁` : `You got ${score}/4 — the makers fooled you! 😄`), 700);
+        }
+      });
+
+      document.querySelectorAll(".seat").forEach((b) => b.addEventListener("click", () => {
+        b.textContent = "✓ Seat requested"; b.disabled = true;
+        toast("We'll email you to confirm your spot ✂");
+      }));
+    })();
+  </script>
+</body>
+</html>
